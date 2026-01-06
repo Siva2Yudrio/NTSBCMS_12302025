@@ -1,4 +1,4 @@
-name: Validate against NTSB PROD on push to DEV
+name: Validate against NTSB PROD on push to DEV 
 on:
   workflow_dispatch:
   push:
