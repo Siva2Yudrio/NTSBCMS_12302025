@@ -40,7 +40,7 @@ jobs:
             --source force-app/
           echo "[INFO] Delta package generated"
     
-    - name: Check if delta exists
+      - name: Check if delta exists
         run: |
           if [ ! -d "changed-sources/force-app" ]; then
             echo "No Salesforce changes detected. Skipping validation."
@@ -56,6 +56,7 @@ jobs:
             --client-id ${{ secrets.NTSBPOC_CONSUMER_KEY }} \
             --instance-url ${{ vars.NTSBPOC_URL }} \
             --set-default
+            
       - name: Validate deployment in PROD (Check-Only)
         run: |
           sf project deploy start \
